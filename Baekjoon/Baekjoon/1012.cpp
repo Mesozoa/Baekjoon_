@@ -1,11 +1,12 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 int dy[4] = { 1,-1,0,0 };
 int dx[4] = { 0,0,1,-1 };
 
-int input[51][51];
-bool visited[51][51];
+int input[51][51] = { 0 };
+bool visited[51][51] = { 0 };
 int M, N, K;
 
 void dfs(int x,int y)
@@ -57,7 +58,7 @@ int main()
 				if (input[j][k] && !visited[j][k])
 				{
 					++ans;
-					visited[j][k]++;
+					++visited[j][k];
 					dfs(j,k);
 				}
 
